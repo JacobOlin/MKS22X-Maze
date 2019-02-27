@@ -39,4 +39,21 @@ public class Maze{
       System.out.println();
     }*/
   }
+
+  private void wait(int millis) {
+    try{
+      Thread.sleep(millis);
+    }
+    catch (InterruptedException e) {
+
+    }
+  }
+
+  public void setAnimate(boolean b) {
+    animate = b;
+  }
+
+  public void clearTerminal() {
+    System.out.println("\033[2J\033[1;1H");
+  }
 }
