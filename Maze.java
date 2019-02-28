@@ -67,4 +67,12 @@ public class Maze{
     }
     return ans;
   }
+
+  public int solve() {
+    return 0;
+  }
+
+  private int solve(int row, int col) {
+    return 0;
+  }
 }
