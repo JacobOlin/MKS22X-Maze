@@ -69,7 +69,17 @@ public class Maze{
   }
 
   public int solve() {
-    return 0;
+    int row = 0;
+    int col = 0;
+    for (int i = 0;i < maze.length;i += 1) {
+      for (int j = 0;j < maze[i].length;j += 1) {
+        if (maze[i][j] == 'S') {
+          row = i;
+          col = j;
+        }
+      }
+    }
+    return solve(row,col);
   }
 
   private int solve(int row, int col) {
