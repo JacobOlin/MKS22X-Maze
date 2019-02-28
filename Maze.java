@@ -56,4 +56,8 @@ public class Maze{
   public void clearTerminal() {
     System.out.println("\033[2J\033[1;1H");
   }
+
+  public String toString() {
+    return "";
+  }
 }
