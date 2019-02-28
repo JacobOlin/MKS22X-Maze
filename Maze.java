@@ -7,7 +7,7 @@ public class Maze{
   private char[][]maze;
   private boolean animate;
 
-  public Maze(String filename) {
+  public Maze(String filename) throws FileNotFoundException{
     ArrayList<String> a = new ArrayList<String>();
     try {
       File text = new File(filename);
