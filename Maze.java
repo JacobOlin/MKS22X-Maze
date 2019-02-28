@@ -73,6 +73,17 @@ public class Maze{
   }
 
   private int solve(int row, int col) {
+    if (maze[row][col] == 'E') {
+      return 1;
+    }
+    int[][] moves = {{0,1},{0,-1},{1,0},{-1,0}};
+    for (int i = 0;i < moves.length;i += 1) {
+      if (maze[row+moves[i][0]][col+moves[i][1]] == ' ') {
+        maze[row][col] = '@';
+        return solve(row+moves[i][0],col+moves[i][1]) + 1;
+      }
+    }
+    maze[row][col] = '.';
     return 0;
   }
 }
