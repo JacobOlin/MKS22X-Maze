@@ -86,12 +86,17 @@ public class Maze{
     if (maze[row][col] == 'E') {
       return 1;
     }
-    int[][] moves = {{0,1},{0,-1},{1,0},{-1,0}};
+    int r = 0;
+    int[][] moves = {{0,1},{0,-1},{-1,0},{1,0}};
     for (int i = 0;i < moves.length;i += 1) {
-      if (maze[row+moves[i][0]][col+moves[i][1]] == ' ') {
+      char a = maze[row+moves[i][0]][col+moves[i][1]];
+      if (a == ' ' || a == 'E') {
         maze[row][col] = '@';
-        return solve(row+moves[i][0],col+moves[i][1]) + 1;
+        r += solve(row+moves[i][0],col+moves[i][1]);
       }
+    }
+    if (r > 0) {
+      return r + 1;
     }
     maze[row][col] = '.';
     return 0;
