@@ -84,7 +84,7 @@ public class Maze{
         }
       }
     }
-    return solve(row,col);
+    return solve(row,col) - 1;
   }
 
   private int solve(int row, int col) {
