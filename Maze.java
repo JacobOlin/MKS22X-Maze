@@ -61,7 +61,12 @@ public class Maze{
     String ans = "";
     for (int i = 0;i < maze.length;i += 1) {
       for (int j = 0;j < maze[i].length;j += 1) {
-        ans += maze[i][j];
+        if (maze[i][j] == '.') {
+          ans += ' ';
+        }
+        else {
+          ans += maze[i][j];
+        }
       }
       ans += "\n";
     }
